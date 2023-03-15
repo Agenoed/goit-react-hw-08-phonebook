@@ -4,6 +4,7 @@ import css from './Form.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
+import Button from '@mui/material/Button';
 
 const FormError = ({ name }) => {
   return <ErrorMessage name={name} render={message => <p>{message}</p>} />;
@@ -60,9 +61,16 @@ export const ContactForm = () => {
           />
           <FormError name="number" />
         </label>
-        <button className={css.formBtn} type="submit">
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            margin: '15px auto',
+            display: 'block',
+          }}
+        >
           Add contact
-        </button>
+        </Button>
       </Form>
     </Formik>
   );

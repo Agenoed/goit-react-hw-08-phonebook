@@ -1,6 +1,7 @@
 import ContactListItem from '../ContactListItem/ContactListItem';
 import { useSelector } from 'react-redux';
 import { getContacts, getStatusFilter } from 'redux/contacts/selectors';
+import css from './ContactList.module.css';
 
 const visibleContacts = (contacts, filter) =>
   contacts.filter(contact =>
@@ -13,7 +14,7 @@ export default function ContactList() {
 
   const filteredData = visibleContacts(contacts, filter);
   return (
-    <ul>
+    <ul className={css.contactList}>
       {filteredData.map(({ id, name, number }) => (
         <ContactListItem key={id} id={id} name={name} number={number} />
       ))}

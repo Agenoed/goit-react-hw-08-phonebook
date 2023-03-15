@@ -1,7 +1,7 @@
-import css from './Filter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setStatusFilter } from 'redux/filterSlice';
 import { getStatusFilter } from 'redux/contacts/selectors';
+import TextField from '@mui/material/TextField';
 
 export default function Filter() {
   const dispatch = useDispatch();
@@ -11,16 +11,15 @@ export default function Filter() {
     dispatch(setStatusFilter(event.currentTarget.value));
   };
   return (
-    <label className={css.filterLabel} htmlFor="filter">
-      Find contacts by name
-      <input
-        className={css.filterName}
-        type="text"
-        name="filter"
-        value={filter}
-        onChange={handleChange}
-        placeholder="Write name for search"
-      />
-    </label>
+    <TextField
+      id="filled-search"
+      label="Find contacts by name"
+      type="search"
+      variant="filled"
+      htmlFor="filter"
+      value={filter}
+      onChange={handleChange}
+      name="filter"
+    />
   );
 }
