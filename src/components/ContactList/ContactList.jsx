@@ -1,6 +1,6 @@
 import ContactListItem from '../ContactListItem/ContactListItem';
 import { useSelector } from 'react-redux';
-import { getContacts, getStatusFilter } from 'redux/selectors';
+import { getContacts, getStatusFilter } from 'redux/contacts/selectors';
 
 const visibleContacts = (contacts, filter) =>
   contacts.filter(contact =>
