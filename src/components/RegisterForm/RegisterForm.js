@@ -31,13 +31,13 @@ export const RegisterForm = () => {
         margin="normal"
         required
         fullWidth
+        autoFocus
       />
       <TextField
         id="email"
         label="Email"
         name="email"
         autoComplete="email"
-        autoFocus
         variant="standard"
         margin="normal"
         required
